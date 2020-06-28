@@ -71,7 +71,8 @@ label{
     "i la a"
     "i lpr p"
     "i lr r"
-    "i lpark park";
+    "i lpark park"
+    "i lf f";
     box-shadow: 1px 1px 3px #0a1612;
     margin: 20px;
     padding: 20px;
@@ -104,6 +105,7 @@ button:focus {outline:0;}
 button:active{background-color: #443729;}
 
 .result>img{
+    max-height: 300px;
     max-width: 325px;
     grid-area: i;
     box-shadow: 1px 1px 3px black;
@@ -149,6 +151,16 @@ button:active{background-color: #443729;}
 }
 
 .result>.immediate{}
+
+.result>.l-feat {
+    grid-area: lf;
+    padding-bottom: 25px;
+}
+
+.result>.features {
+    grid-area: f;
+    display: contents;
+}
 
 .no-match{
     color: #DD6300;

@@ -4,10 +4,12 @@
 <head>
     <title>Selouse</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
 <body>
@@ -37,9 +39,35 @@
 
     <!-- Your Code Here -->
     <!-- You should start doing handlebar stuff here -->
+    <script id="resultApartments-templates" type="text/x-handlebars-template">
+        {{#each apartment}}
+            <div class="result">
+                <img src="{{this.img}}">
+                <div class="l-addr">Address: </div>
+                <div class="address">{{this.address}}</div>
+                <div class="l-price">Price: </div>
+                <div class="price">{{this.price}}</div>
+                <div class="l-rooms">Rooms: </div>
+                <div class="rooms">{{this.rooms}}</div>
+                <div class="l-park">Parking: </div>
+                {{#if this.parking}}
+                    <i class="fas fa-parking parking"></i>
+                {{else}}
+                    <div class="parking">No parking on site</div>
+                {{/if}}
+                <div class="l-feat">Features: </div>
+                {{#each features}}
+                    <div class="features">{{ this }}<br></div>
+                {{/each}}
+            </div>
+                {{else}}
+                <p class="no-match">There is no apartments with the current filters</p>
+        {{/each}}
+    </script>
     <!-- Your Code Here -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
     <script src="apt-data.js"></script>
     <script src="apt-filter.js"></script>
